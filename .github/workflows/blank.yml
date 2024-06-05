@@ -29,15 +29,6 @@ jobs:
       - name: Build Docker image
         run: docker build -t app .
         
-      # Check if the build succeeded
-      - name: Check Build Status
-        if: ${{ success() }}
-        run: exit 0
-      # If the build failed, exit with a non-zero code
-      - name: Fail Build
-        run: exit 1
-      
-      
       # Configure Git
       - name: Configure Git
         run: |
