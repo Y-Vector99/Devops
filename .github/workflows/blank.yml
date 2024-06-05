@@ -28,6 +28,12 @@ jobs:
       # build & test
       - run: docker build -t app .
       
+      # Configure Git
+      - name: Configure Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+      
       # Authenticate with GitHub token
       - name: Authenticate with GitHub
         env:
